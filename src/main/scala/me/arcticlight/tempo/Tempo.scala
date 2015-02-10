@@ -5,6 +5,8 @@ package me.arcticlight.tempo
  */
 object Tempo {
   def main (args: Array[String]) {
+    import org.lwjgl.Sys
     me.arcticlight.tempo.reswizard.Unpacker.UnpackResources()
+    println(Sys.getVersion())
   }
 }
