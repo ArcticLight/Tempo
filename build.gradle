@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'scala'
 
+//noinspection GroovyUnusedAssignment
 sourceCompatibility = 1.7
 version = '1.0'
 
@@ -11,7 +12,8 @@ repositories {
 jar {
     manifest {
         attributes 'Main-Class': "me.arcticlight.tempo.Tempo",
-                'Implementation-Version': version
+                'Implementation-Version': version,
+                'Class-Path': 'native'
     }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
